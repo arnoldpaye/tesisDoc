@@ -1,0 +1,132 @@
+\chapter{Marco Te\'orico}
+
+\section{El Sumario}
+Un sumario es un texto que es producido a partir de uno o m\'as textos,
+que contiene una porci\'on significante de la informaciones en el o los
+textos originales, y que no excede la mitad del mismo. \cite{EH05} \\
+	
+\section{Sumarizaci\'on autom\'atica de texto}
+Es el proceso de destilar la informaci\'on m\'as importante a partir de
+una o m\'as fuentes para producir una versi\'on abreviada para un usuario
+y tarea determinada realizado por una computadora. \cite{EL08} \\
+
+Generalmente la fuente se centra en texto, pero tambi\'en puede ser
+de otro tipo como ser: imagenes, video o audio asi como tambi\'en
+informaci\'on online. Por otra parte se puede hablar de la sumarizaci\'on
+de un solo documento o de multiples documentos, este ultimo se conoce
+como Sumarizaci\'on Multi-documento (SMD) adem\'as los documentes fuentes
+pueden estar en un solo lenguaje (monoling\"ue) o en diferentes lenguajes
+(multiling\"ue). \\
+
+El resultado de un sistema de sumarizaci\'on puede ser un \emph{extracto}
+(selecci\'on de sentencias significativas) o una \emph{abstracci\'on}
+(resumen del documento). \\
+
+\subsection{Proceso de la sumarizaci\'on autom\'atica de texto}
+Segun el enfoque de Sparck Jones \cite{KS99} el proceso se divide en las
+siguientes etapas:
+\begin{description}
+	\item[$\bullet$ interpretaci\'on] del texto fuente para obtener una
+	representaci\'on del mismo.
+	\item[$\bullet$ transformaci\'on] de la representaci\'on del texto
+	en una representaci\'on del sumario.
+	\item[$\bullet$ generaci\'on] del sumario a partir de la representaci\'on
+	del sumario.
+\end{description}
+
+\section{Lenguaje Natural}
+Es el lenguaje hablado o escrito por humanos para prop\'ositos generales
+de comunicaci\'on. Son aquellas lenguas que han sido generadas
+espont\'aneamente en un grupo de hablantes con el prop\'osito de
+comunicarse, a diferencia de otras lenguajes, como pueden ser un lenguaje
+construido, lenguajes de programaci\'on o los lenguajes usados en el
+estudio de la l\'ogica formal, especialmente la l\'ogica matem\'atica.
+
+\section{Procesamiento del Lenguaje Natural}
+El Procesamiento del Lenguaje Natural (PLN) es la disciplina encargada
+de producir sistemas inform\'aticos que posibiliten la comunicaci\'on
+hombre-computadora por medio del lenguaje humano a trav\'ez de la voz o
+del texto escrito.
+
+\section{M\'etodos de sumarizaci\'on}
+Los m\'etodos de sumarizaci\'on se clasifican en dos categor\'ias:
+\emph{m\'etodos extractivos} y \emph{m\'etodos abstractivos}
+% TODO: Completar con otros tipos de m\etodos: basados en maximum-entropy,
+% aided summarization
+
+\subsection{M\'etodos extractivos de sumarizaci\'on}
+Obtienen el sumario mediante la uni\'on de extractos del texto original,
+que pueden ser palabras claves o sentencias completas.
+% TODO: Citar m\'etodos
+
+\subsection{M\'etodos abstractivos de sumarizaci\'on}
+Obtienen el sumario mediante la generaci\'on de lenguaje natural, condensando
+el texto en forma m\'as significativa que los m\'etodos extractivos.\\
+% TODO: Citar m\'etodos
+
+En este trabajo se va a utilizar un m\'etodo extractivo de sumarizaci\'on conocido
+como \emph{Modelo TextRank}
+
+\section{Modelo TextRank}
+Es un m\'odelo de puntuaci\'on basado en grafos para el procesamiento de
+texto \cite{RMPT04}, que es utilizado para la extracci\'on de palabras claves
+y sentencias mediante algoritmos de puntuaci\'on basados en grafos.
+% TODO: Completar este concepto
+
+\subsection{Algoritmos de puntuaci\'on basados en grafos}
+Son algoritmos que se utilizan para obtener valores significativos
+(\emph{calificaci\'on}) de los nodos en un grafo. \\
+
+Existen varios algoritmos de puntuaci\'on: \emph{PageRank} de Google,
+\emph{HITS} de Kleinberg, \emph{Positional Function} de Herings \cite{RM04}. \\
+
+A continuaci\'on se describe el algoritmo PageRank.
+
+\subsubsection{Algoritmo PageRank}
+% TODO: agregar gr\'afico
+Dado $G=(V,E)$ un grafo dirigido, con un conjunto de v\'ertices $V$ y un conjunto
+de arcos $E$, donde $E$ es un subconjunto de $V x V$, llamamos $In(V_i)$ al
+conjunto de v\'ertices que apuntan a $V_i$ (predecesores) y $Out(V_i)$ al 
+conjunto de v\'ertices que son apuntados por $(V_i)$ (sucesores). El puntaje del
+v\'ertice $V_i$ esta dado por \cite{SBLP98}:
+
+\begin{equation}
+	S(V_i) = (1 - d) + d * \sum_{V_j\in In(V_i)}{\frac{1}{|Out(V_j)|}S(V_j)}
+\end{equation}
+
+donde $d$ es un factor de amortiguaci\'on que toma valores comprendidos entre
+0 y 1, que expresa la probabilidad de avanzar de un v\'ertice a otro de manera
+aleatoria, generalmente tiene el valor de 0.85 \cite{SBLP98}.
+
+\subsection{Aplicaci\'on en la extracci\'on de sentencias} 
+Para la aplicaci\'on en la extracci\'on de sentencias, el modelo TextRank realiza
+las siguientes consideraciones antes de utilizar un algoritmo de de puntuaci\'on:
+el grafo no es direccionado y los arcos son ponderados. \\
+
+Aplicando las anteriores consideraciones en la ecuaci\'on (2.1) se tiene
+\cite{RMPT04}:
+
+\begin{equation}
+	WS(V_i) = (1 - d) + d *
+	\sum_{V_j\in In(V_i)}{\frac{w_{ij}}{\sum_{V_k\in Out(V_j)}{w_{jk}}}WS(V_j)}
+\end{equation}
+
+El grafo es construido de la siguiente manera: los v\'ertices son representados por
+sentencias extraidas del texto bajo algun criterio ling\"uistico, existen arcos
+entre las sentencias si existe una relaci\'on de similitud entre ellas.
+
+En \cite{RMPT04} se presenta la siguiente relaci\'on de similitud: Dado dos
+sentencias $S_i$ y $S_j$, $S_i$ esta compuesta por las palabras 
+$w^i_1,w^i_2,...,w^i_{N_i}$ donde $N_i$ es la cantidad de palabras en $S_i$ y de igual
+manera para $S_j$, la similitud entre $S_i$ y $S_j$ es:
+
+\begin{equation}
+	Similitud(S_i, S_j) = 
+	\frac{|\{w_k|w_k\in S_i \wedge w_k\in S_j\}}{log(|S_i|)+log(|S_j|)}
+\end{equation}
+
+Es posible considerar otros criterios de similitud entre sentencias: n\'ucleo de
+cadenas, similitud cosena, subsecuencia com\'un m\'as larga, etc. \\
+
+El sumario se obtendra de la uni\'on de las sentencias con mayor puntuaci\'on
+aplicando la ecuaci\'on (2.2) al grafo construido a partir de texto original.

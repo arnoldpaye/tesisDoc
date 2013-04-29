@@ -1,0 +1,40 @@
+\documentclass[letterpaper, oneside, 12pt]{book}
+\input{preambulo}
+
+\begin{document}
+	\pagestyle{plain}
+	%% Titulo
+	\include{caratula}
+
+	\frontmatter
+	%% Dedicatoria
+	%\include{dedicatoria}
+
+	%% Agradecimientos
+	%\include{agradecimientos}
+	%% Resumen
+	%\include{resumen}
+
+	%% Indice de contenidos
+	\tableofcontents
+	%% Indice de figuras
+	%\listoffigures
+	%% Indice de tablas
+	%\listoftables
+
+	\mainmatter
+	%% CAPITULOS
+
+	%% Marco referencial
+	\include{capitulos/marcoReferencial}
+
+	%% Marco teorico
+	\include{capitulos/marcoTeorico}
+
+	\backmatter
+	%% Bibliografia
+	%\bibliographystyle{plain}
+	\bibliographystyle{alpha}
+	%\bibliographystyle{acm}
+	\bibliography{bibliografia}
+\end{document}
