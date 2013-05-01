@@ -1,7 +1,25 @@
 \chapter{Marco Referencial}
 \section{Introducci\'on}
+El estudio del Procesamiento Natural del Lenguaje (PNL) es un campo muy interesante
+donde se descatan varias tareas como: extracci\'on de informaci\'on, maquinas de
+traducci\'on, summarizaci\'on de texto, etc. \\
+
+Un campo donde se debe trabajar es el de la summarizaci\'on de texto, donde se debe
+realizar mas acciones. \\
+
+El presente trabajo se enfoca en la construcci\'on de una herramienta software para
+la elaboraci\'on de resumenes de art\'iculos cientificos mediante el modelo TextRank
+basado en algoritmos de puntuaci\'on.
 
 \section{Antecedentes}
+Entre las herramientas existentes para realizar sumarios de texto, tenemos:
+\begin{description}
+	\item[MEAD] El proyecto MEAD es sumarizador multidocumento de texto que utiliza
+	el algoritmo LexRank \cite{MEAD}.
+	\item[Texlexan] Es una herramienta open source que realiza sumarizaci\'on,
+	an\'alisis y clasificaci\'on de textos escritos en los siguientes idiomas: ingles,
+	frances, aleman, italiano y espa\~nol \cite{TEXLEXAN}.
+\end{description}
 En la carrera de Inform\'atica existen los siguientes trabajos concernientes al tema:\\
 \begin{description}
 	\item[\cite{EZ01}] Elabora resumenes de texto mediante redes neuronales de texto en el
@@ -10,24 +28,33 @@ En la carrera de Inform\'atica existen los siguientes trabajos concernientes al 
 	inteligentes.
 \end{description}
 
+% TODO: Describir herramientas existentes
+
 \section{Planteamiento del problema}
-Actualmente no se cuenta con una herramienta para realizar resumenes de texto escritos
-en lenguaje natural en el \'ambito de los art\'iculos cient\'ificos.
+Dada la abrumadora cantidad de informaci\'on existente en internet, se dificulta su
+consulta al no contarse con resumenes que faciliten su compresi\'on.
 
 \section{Objetivos}
 
 \subsection{Objetivo general}
-Elaborar una herramienta para realizar un sumario autom\'atico de texto extraidos de
-articulos aplicando conceptos del \emph{Procesamiento del Lenguaje Natural} y
-la \emph{Ling\"uistica Computacional} utilizando el algoritmo \emph{TextRank}.
+Construir una herramienta software para la elaboraci\'on de resumenes extractivos 
+de art\'iculos cient\'ificos.  
 
 \subsection{Objetivos espec\'ificos}
 Los objetivos espec\'ificos se describen a continuaci\'on:
 \begin{enumerate}
-	\item Evaluar el algoritmo TextRank para realizar sumarizaciones de texto.
-	\item Evaluar algoritmos para valorar las sentencias u oraciones de un texto para
-	mejor el resultado del sumario.
+	\item Evaluar m\'etodos para extraer sentencias de texto de manera \'optima.
+	\item Evaluar algoritmos de puntuaci\'on basados en grafos para aplicarlos al
+	modelo TextRank.
 \end{enumerate}
+
+\section{Justificaciones}
+\subsection{Justificaci\'on tecnol\'ogica}
+\subsection{Justificaci\'on social}
+
+\section{Aportes}
+
+\section{Metodolog\'ia}
 
 \section{Limites y alcances}
 El presente trabajo se limitara a realizar sumarizaci\'on de texto escrito en lenguaje
