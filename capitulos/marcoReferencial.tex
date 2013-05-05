@@ -1,59 +1,56 @@
 \chapter{Marco Referencial}
 \section{Introducci\'on}
-La comunicaci\'on entre humanos y m\'aquinas ha sido un tema de estudio muy amplio,
-debido a su complejidad. \\
+A trav\'ez de la historia, el conocimiento humano ha sido almacenado en gran medida
+de forma escrita, teniendose a los libros, peri\'odicos, art\'iculos cient\'ificos,
+etc., como muestra de ello. En general este conocimiento ha sido escrito en lenguaje
+natural. \\
 
-El Procesamiento del Lenguaje Natural (PNL), estudia m\'etodos para tratar 
-el lenguaje natural propio de los seres humanos de forma autom\'atizada. \\
+Dada la abrumadora cantidad de este tipo de informaci\'on, es necesario su organizaci\'on
+para identificarla entre las diferentes \'areas de conocimiento a las que puede 
+pertenecer, para este cometido es necesario contar con criterios de clasificaci\'on 
+que faciliten su posterior consulta. \\
 
-Entre las tareas m\'as importantes que trata el PNL tenemos: modelado del lenguaje,
-extracci\'on de informaci\'on, generaci\'on de lenguaje, sumarizaci\'on de texto. \\
+El Procesamiento del Lenguaje Natural (PLN), es una rama de la Ling\"uistica 
+Computacional que b\'asicamente estudia la comunicaci\'on entre personas y 
+m\'aquinas por medio de lenguajes naturales. Entre las principales tareas de las que 
+se ocupa, se encuentra la \emph{extracci\'on de informaci\'on} que es utilizada 
+para el reconocimiento de nombres de entidades y extracci\'on de terminolog\'ia. \\
 
-En este trabajo nos enfocaremos en la sumarizaci\'on de texto, para obtener resumenes
-de texto de art\'iculos cient\'ificos, facilitando de esta manera la consulta de
-material existente en internet. \\
+La extracci\'on de terminolog\'ia permite identificar y extraer \emph{palabras claves} 
+de un texto analizado, que representan su tema o motivo central, las cuales representan
+un criterio de clasificaci\'on eficiente.\\
 
-El m\'etodo elegido para obtener los resumenes es el basado en el Modelo TextRank,
-que utiliza algoritmos de calificaci\'on, modelando el texto como un grafo, donde
-los v\'ertices son sentencias u oraciones del texto original, que despu\'es de
-aplicarse el algoritmo tienen un puntaje, las sentencias con mayor puntaje
-conformar\'an el resumen.
+Existen dos enfoques claramente identificados para la extracci\'on de palabras claves:
+en base a aprendizaje supervisado y no supervisado, en el primero la computadora es
+previamente entrenada con un conjunto de textos y palabras claves extraidas por
+un experto ling\"uista para su posterior automatizaci\'on, mientras que en el segundo
+la automatizaci\'on es totalmente independiente.\\
+
+En este trabajo realizaremos la extracci\'on de palabras claves bajo un enfoque no
+supervidado mediante el modelo \emph{TextRank} que utiliza algoritmos de clasificaci\'on
+basados en grafos.\\
 
 \section{Antecedentes}
-Entre las herramientas existentes para realizar sumarios de texto, tenemos:
-\begin{description}
-	\item[MEAD] El proyecto MEAD es sumarizador multidocumento de texto que utiliza
-	el algoritmo LexRank \cite{MEAD}.
-	\item[Texlexan] Es una herramienta open source que realiza sumarizaci\'on,
-	an\'alisis y clasificaci\'on de textos escritos en los siguientes idiomas: ingles,
-	frances, aleman, italiano y espa\~nol \cite{TEXLEXAN}.
-\end{description}
-En la carrera de Inform\'atica existen los siguientes trabajos concernientes al tema:\\
-\begin{description}
-	\item[\cite{EZ01}] Elabora resumenes de texto mediante redes neuronales de texto en el
-	\'ambito Sociol\'ogico.
-	\item[\cite{HM05}] Realiza reconocimiento del lenguaje natural mediante agentes
-	inteligentes.
-\end{description}
 
 % TODO: Describir herramientas existentes
 
 \section{Planteamiento del problema}
-Dada la abrumadora cantidad de informaci\'on existente en internet, se dificulta su
-consulta al no contarse con resumenes que faciliten su compresi\'on.
+Existe una cantidad considerable de material bibliogr\'afico que no cuenta con una
+selecci\'on de palabras claves, lo cual dificulta su clasificaci\'on y posterior
+consulta.
 
 \section{Objetivos}
 
 \subsection{Objetivo general}
-Construir una herramienta software para la elaboraci\'on de resumenes extractivos 
-de art\'iculos cient\'ificos.  
+Construir una herramienta software que permita obtener el conjunto de palabras claves
+representativas de un texto mediante el Modelo TextRank.
 
 \subsection{Objetivos espec\'ificos}
-Los objetivos espec\'ificos se describen a continuaci\'on:
 \begin{enumerate}
-	\item Evaluar m\'etodos para extraer sentencias de texto de manera \'optima.
-	\item Evaluar algoritmos de puntuaci\'on basados en grafos para aplicarlos al
-	modelo TextRank.
+	\item Evaluar algoritmos de clasificaci\'on basados en grafos para ser aplicados en el
+	Modelo TextRank.
+	\item Evaluar los tipos de palabras que deben ser seleccionados para obtener mejores
+	resultados.
 \end{enumerate}
 
 \section{Justificaciones}
@@ -65,5 +62,3 @@ Los objetivos espec\'ificos se describen a continuaci\'on:
 % \section{Metodolog\'ia}
 
 \section{Limites y alcances}
-El presente trabajo se limitara a realizar sumarizaci\'on de texto escrito en lenguaje
-espa\~nol monoling\"ue y en un formato extractivo.

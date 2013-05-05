@@ -98,6 +98,19 @@ donde $d$ es un factor de amortiguaci\'on que toma valores comprendidos entre
 0 y 1, que expresa la probabilidad de avanzar de un v\'ertice a otro de manera
 aleatoria, generalmente tiene el valor de 0.85 \cite{SBLP98}.
 
+\subsection{Aplicaci\'on en la extracci\'on de palabras claves}
+El grafo es construido de la siguiente manera: se seleccionan palabras  para 
+conformar los v\'ertices, si existe una relaci\'on de co-ocurrencia entre las palabras
+seleccionadas, se a\~nade un nodo entre ellas. \\
+
+Las palabras seleccionadas son aquellas que pasan por un filtro sint\'actico, el cual
+selecciona solo las unidades l\'exicas pertenecientes a un conjunto definido de tipos
+de palabras. \\
+
+Se pueden seleccionar todos los tipos de palabras, o un conjunto restringido a verbos
+y sustantivos, se presentan mejores resultados con el conjunto de verbos y
+adjetivos \cite{RMPT04} .
+
 \subsection{Aplicaci\'on en la extracci\'on de sentencias} 
 Para la aplicaci\'on en la extracci\'on de sentencias, el modelo TextRank realiza
 las siguientes consideraciones antes de utilizar un algoritmo de de puntuaci\'on:
