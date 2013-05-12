@@ -5,10 +5,10 @@ de forma escrita, teniendose a los libros, peri\'odicos, art\'iculos cient\'ific
 etc., como muestra de ello. En general este conocimiento ha sido escrito en lenguaje
 natural. \\
 
-Dada la abrumadora cantidad de este tipo de informaci\'on, es necesario su organizaci\'on
-para identificarla entre las diferentes \'areas de conocimiento a las que puede 
-pertenecer, para este cometido es necesario contar con criterios de clasificaci\'on 
-que faciliten su posterior consulta. \\
+Dada la abrumadora cantidad de este tipo de informaci\'on, es necesario su 
+organizaci\'on para identificarla entre las diferentes \'areas de conocimiento 
+a las que puede pertenecer, para este cometido es necesario contar con criterios 
+de clasificaci\'on que faciliten su posterior consulta. \\
 
 El Procesamiento del Lenguaje Natural (PLN), es una rama de la Ling\"uistica 
 Computacional que b\'asicamente estudia la comunicaci\'on entre personas y 
@@ -17,8 +17,8 @@ se ocupa, se encuentra la \emph{extracci\'on de informaci\'on} que es utilizada
 para el reconocimiento de nombres de entidades y extracci\'on de terminolog\'ia. \\
 
 La extracci\'on de terminolog\'ia permite identificar y extraer \emph{palabras claves} 
-de un texto analizado, que representan su tema o motivo central, las cuales representan
-un criterio de clasificaci\'on eficiente.\\
+de un texto analizado, que representan su tema o motivo central, las cuales 
+representan un criterio de clasificaci\'on eficiente.\\
 
 Existen dos enfoques claramente identificados para la extracci\'on de palabras claves:
 en base a aprendizaje supervisado y no supervisado, en el primero la computadora es
@@ -27,12 +27,35 @@ un experto ling\"uista para su posterior automatizaci\'on, mientras que en el se
 la automatizaci\'on es totalmente independiente.\\
 
 En este trabajo realizaremos la extracci\'on de palabras claves bajo un enfoque no
-supervidado mediante el modelo \emph{TextRank} que utiliza algoritmos de clasificaci\'on
-basados en grafos.\\
+supervidado mediante el modelo \emph{TextRank} que utiliza algoritmos de 
+clasificaci\'on basados en grafos.\\
 
 \section{Antecedentes}
+El estado del arte actual en esta \'area esta representado principalmente por
+m\'etodos de aprendizaje supervisado, Peter Turney fue el primero en sugerir uno,
+el cual combina reglas heur\'isticas parametrizadas con algoritmos gen\'eticos
+en un sistema conocido com \emph{GenEx} el cual identifica palabras claves en un
+documento \cite{PT99}. \\
 
-% TODO: Describir herramientas existentes
+En 2003 Anette Hulth propone un m\'etodo de aprendizaje supervisado aplicando
+conocimiento ling\"uistico al modelo (propiedades lexicas y sint\'acticas) para obtener
+un mejor resultado \cite{AH03}. \\
+
+En 2004 Rada Mihalcea y Paul Taran proponen un modelo no supervisado de extracci\'on
+de palabras basado en algoritmos de clasificaci\'on basados en grafo \cite{RMPT04}. \\
+
+Se ha identificado las siguientes herramientas software para la extracci\'on de
+palabras claves:
+\begin{description}
+	\item[Kea] Es un algoritmo de extracci\'on de frases implementado en Java,
+	open-source, utilizado principalmente en indexaci\'on libre  o indexaci\'on con
+	un vocabulario controlado \cite{KEA}.
+	\item[Texlexan] Es un proyecto que permite el an\'alisis, clasificaci\'on y
+	sumarizaci\'on de texto, teniendo la caracter\'istica principal que es 
+	multiling\"ue \cite{TEXLEXAN}.
+\end{description}
+
+%TODO: Completar con otras herramientas
 
 \section{Planteamiento del problema}
 Existe una cantidad considerable de material bibliogr\'afico que no cuenta con una
@@ -47,18 +70,28 @@ representativas de un texto mediante el Modelo TextRank.
 
 \subsection{Objetivos espec\'ificos}
 \begin{enumerate}
-	\item Evaluar algoritmos de clasificaci\'on basados en grafos para ser aplicados en el
-	Modelo TextRank.
+	\item Evaluar algoritmos de clasificaci\'on basados en grafos para ser su
+	aplicaci\'on en el modelo TextRank.
 	\item Evaluar los tipos de palabras que deben ser seleccionados para obtener mejores
 	resultados.
 \end{enumerate}
 
 \section{Justificaciones}
 \subsection{Justificaci\'on tecnol\'ogica}
-\subsection{Justificaci\'on social}
+El Procesamiento del Lenguaje Natural utiliza recursos computacionales especialmente
+para el tratamiento probabil\'istico, debido a esto existen paquetes especializados
+enfocados en este campo: \emph{Natural Language Toolkit} escrito en Python y
+\emph{Apache OpenNLP} escrito en Java, que facilitan esta tarea.
 
+\subsection{Justificaci\'on social}
+Actualmente existe un cantidad considerable de material que no esta adecuadamente
+clasificado, tales como ser las tesis y proyectos de grado en la carrera de 
+Inform\'atica, que no presentan un conjunto de palabras claves, especialmente en
+los m\'as antiguos que no tenian esa exigencia.
 % \section{Aportes}
 
 % \section{Metodolog\'ia}
 
 \section{Limites y alcances}
+Los textos a ser tratados deben estar escrito en idioma espa\~nol, las palabras claves
+extraidas seran propias del texto y no asi palabras nuevas.
