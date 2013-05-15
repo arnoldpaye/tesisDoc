@@ -1,4 +1,26 @@
 \chapter{Marco Te\'orico}
+\section{Palabras Clave}
+Conocidos tambi\'en como \emph{descriptores}, que posibilitan el tratamiento
+automatizado de las fuentes de literatura mediante bases de datos. \\
+
+Son ampliamente utilizados para la b\'usqueda en p\'aginas web y art\'iculos
+cient\'ificos. \\
+
+Las palabras clave son t\'erminos o frases cortas (lexemas) que permiten clasificar
+y direccionar las entradas en los sistemas de indexaci\'on y de recuperaci\'on de la
+informaci\'on en las bases de datos de un manuscrito o \'area tem\'atica en
+particular. Las palabras clave se convierten entonces en una herramienta esencial
+de doble v\'ia, es decir, de quienes escriben y de quienes buscan la informaci\'on de
+manuscritos o \'areas tem\'aticas relacionadas. En consecuencia, no se debe
+subvalorar o menospreciar su importancia a la hora de considerarlas, pues se podr\'ia
+dificultar la difusi\'on de un manuscrito e incluso no detectar la relaci\'on del
+mismo con otros similares, justamente por el uso inedecuado de las palabras clave.
+
+\section {Clasificaci\'on de documentos}
+La clasificaci\'on de documentos se refiere al problema de asignar un documento a
+uno o m\'as categor\'ias, esta tarea puede ser realizada manualmente, generalmente
+por expertos en bibliotecolog\'ia, o de forma automatizada.
+
 \section{Lenguaje Natural}
 Es el lenguaje hablado o escrito por humanos para prop\'ositos generales
 de comunicaci\'on. Son aquellas lenguas que han sido generadas
@@ -38,15 +60,15 @@ A continuaci\'on se describe el algoritmo PageRank.
 \subsubsection{Algoritmo PageRank}
 \begin{figure}
 	\centering
-		\includegraphics[]{recursos/img/grafo.jpg} \\
+		\includegraphics[]{recursos/img/grafoDirigido}
 		\caption {Grafo dirigido}
 \end{figure}
 
 Dado $G=(V,E)$ un grafo dirigido, con un conjunto de v\'ertices $V$ y un conjunto
 de arcos $E$, donde $E$ es un subconjunto de $V x V$, llamamos $In(V_i)$ al
 conjunto de v\'ertices que apuntan a $V_i$ (predecesores),  en la Figura 2.1
-$In(E)=\{C\}$, y $Out(V_i)$ al conjunto de v\'ertices que son apuntados por $(V_i)$
-(sucesores), en la Figura 2.1 $Out(A)=\{B,C,D\}$ . El puntaje del v\'ertice $V_i$ 
+$In(E)=\{A,B,C\}$, y $Out(V_i)$ al conjunto de v\'ertices que son apuntados por $(V_i)$
+(sucesores), en la Figura 2.1 $Out(D)=\{F,G\}$ . El puntaje del v\'ertice $V_i$ 
 esta dado por \cite{SBLP98}:
 
 \begin{equation}
