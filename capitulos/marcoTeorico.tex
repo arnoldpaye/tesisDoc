@@ -1,35 +1,46 @@
 \chapter{Marco Te\'orico}
-\section{Palabras Clave}
-Las palabras clave se definen como una secuencia de una o mas palabras que idealmente
-proveen una representaci\'on compacta de la esencia del contenido de un 
-documento. \cite{REC10}
-%TODO: Complentar la definici\'on (usos, aplicaciones)
-
-\section {Clasificaci\'on de documentos}
-La clasificaci\'on de documentos se refiere al problema de asignar un documento a
-uno o m\'as categor\'ias, esta tarea puede ser realizada manualmente, generalmente
-por expertos en bibliotecolog\'ia, o de forma automatizada.
-
 \section{Lenguaje Natural}
-Es el lenguaje hablado o escrito por humanos para prop\'ositos generales
-de comunicaci\'on. Son aquellas lenguas que han sido generadas
-espont\'aneamente en un grupo de hablantes con el prop\'osito de
-comunicarse, a diferencia de otras lenguajes, como pueden ser un lenguaje
-construido, lenguajes de programaci\'on o los lenguajes usados en el
-estudio de la l\'ogica formal, especialmente la l\'ogica matem\'atica.
-
-\section{Lexicograf\'ia}
-La lexicograf\'ia se define como la \emph{praxis de la lexicolog\'ia} que se ocupa
-de la elaboraci\'on de diccionarios \cite{LEX01}. \\
-
-La metalexicograf\'ia estudia aspectos te\'oricos de los diccionarios, tales como
-su historia, tipolog\'ia, finalidad y su relaci\'on con otras disciplinas. \\
+Es el lenguage que ha evolucionado naturalmente y usado por los seres humanos con
+propositos de comunicaci\'on, a diferencia de otras lenguajes, como pueden ser un 
+lenguaje construido, lenguajes de programaci\'on o los lenguajes usados en el estudio 
+de la l\'ogica formal, especialmente la l\'ogica matem\'atica.  
 
 \section{Procesamiento del Lenguaje Natural}
-El Procesamiento del Lenguaje Natural (PLN) es la disciplina encargada
-de producir sistemas inform\'aticos que posibiliten la comunicaci\'on
-hombre-computadora por medio del lenguaje humano a trav\'ez de la voz o
-del texto escrito.
+El Procesamiento del Lenguaje Natural (PLN) es un campo de la inform\'atica y la 
+ling\"uistica concerniente con la interacci\'on entre computadoras y lenguajes
+humanos. \\
+
+La interacci\'on se produce con la \emph{generaci\'on} de lenguaje legible por humanos
+a partir de datos procesados y la \emph{comprensi\'on} del lenguaje humano para su
+representaci\'on formal.
+
+\section{Palabras clave}
+Las palabras clave se definen como una secuencia de una o mas palabras que idealmente
+proveen una representaci\'on compacta de la esencia del contenido de un 
+documento \cite{REC10}. \\
+
+Las palabras clave se utilizan para catalogar e indexar material bibliogr\'afico,
+su identificaci\'on es una de las tareas principales en el procesamiento de texto. \\
+
+La asignaci\'on manual de palabras claves de calidad es costosa, consume tiempo y es
+propensa a error, por lo tanto se han propuesto varios m\'etodos para su seleccio\'on
+autom\'atica.
+
+\subsection{M\'etodos de selecci\'on de palabras clave}
+Los m\'etodos de selecci\'on de palabras claves se dividen en cuatro categor\'ias:
+estad\'isticas simples, ling\"uisticos, aprendizaje autom\'atico y otros \cite{ZWW08}.
+\begin{description}[leftmargin=0cm]
+	\item[Enfoques estad\'isticos] Son los mas simples, no necesitan datos previos,
+	la informaci\'on estad\'istica de las palabras pueden ser usadas para identificar
+	las palabras clave en un documento.
+	\item[Enfoques ling\"uisticos] Utilizan las caracter\'isticas l\'exicas y
+	sint\'acticas de las palabras, sentencias y documentos.
+	\item[Enfoques de aprendizaje autom\'atico] Se basan en el aprendizaje supervisado
+	a partir de datos de ejemplo para generar un modelo y aplicarlo a nuevos
+	documentos.
+	\item[Otros enfoques] Combinan los m\'etodos anteriormente mencionados o utilizan
+	conocimiento heur\'istico.
+\end{description}
 
 \section{Modelo TextRank}
 Es un m\'odelo de puntuaci\'on basado en grafos para el procesamiento de
