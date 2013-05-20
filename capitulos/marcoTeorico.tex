@@ -14,13 +14,14 @@ son construcci\'ones artificiales, donde los s\'imbolos y reglas para unir los m
 est\'an formalmente especificados, los lenguajes de programaci\'on utilizados en 
 inform\'atica son un ejemplo de lenguaje formal.
 
+
 \section{Lenguaje Natural}
 Las capacidades humanas de comunicaci\'on se basan en el uso de signos ling\"uisticos
 que se componen por un concepto (\emph{significado}) y una imagen ac\'ustica
 (\emph{significante}), cuando estos signos se asocian a una sintaxis generan  una
 \emph{lengua natural}, el uso de estas lenguas describen un lenguaje natural. \\
 
-Los idiomas como ser el espa\~nol o el ingles, al contar con un conjunto de signos
+Los idiomas como ser el espa\~nol o el ingl\'es, al contar con un conjunto de signos
 (\emph{alfabeto}) y reglas sint\'acticas (\emph{gram\'atica}) propias para cada uno,
 representan lenguajes naturales.
 
@@ -28,42 +29,37 @@ representan lenguajes naturales.
 Es el conjunto de simbolos utilizados en un idioma para representar estructuras del
 lenguaje como las palabras.
 
-
 \subsection{Gram\'atica}
 Es el conjunto de reglas que gobiernan la composici\'on de las palabras dentro de un
 lenguaje natural.
+
 
 \section{La Palabra}
 La Palabra es la unidad m\'inima con significado que se puede pronunciar de manera
 aislada (evidencia fonol\'ogica)\cite{HOET09}. La rama de la ling\"uistica que estudia
 la composici\'on y estructura interna de las palabras es la morfolog\'ia.
 
-
 \subsection{Clasificaci\'on de las palabras}
 La clasificaci\'on de las palabras se puede hacer en funci\'on de diferentes criterios:
-categor\'ia gramatical, estructura interna, acentuaci\'on y n\'umero de s\'ilabas; para
-los fines del presente trabajo se tomara en cuenta la clasificaci\'on seg\'un su
-categor\'ia gramatical tambi\'en conocido como \emph{parte de la oraci\'on}
-(part-of-speech en ingl\'es), es la siguiente:
+categor\'ia gramatical, estructura interna, acentuaci\'on y n\'umero de s\'ilabas. \\
+
+La clasificaci\'on por categor\'ia gramatical es la siguiente:
+
 \begin{description}[leftmargin=0cm]
-	\item[Sustantivo] Son palabras cuyo referentes son entidades fijas, todo aquello a 
-	lo que le damos un nombre: \emph{perro}, \emph{Pablo}, etc.
-	\item[Verbo] Son palabras que expresan acci\'on o movimiento, presentan formas
-	conjugadas: \emph{correr}, \emph{preguntar}, etc.
-	\item[Adjetivo] Son palabras que califican al sustantivo para completarlo expresando
-	caracter\'isticas y propiedades: \emph{grande}, \emph{r\'apido}, etc.
-	\item[Adverbio] Son palabras que sirven para modificar a un verbo, adjetivo u otro
-	adverbio: \emph{muy}, \emph{poco}, \emph{adelante}, etc.
-	\item[Determinante] Son palabras que precisan un sustantivo, transform\'andolo de
-	abstracto a concreto: \emph{el}, \emph{la}, \emph{un}, etc.
-	\item[Preposici\'on] Son palabras invariantes que ligan el nombre con un verbo:
-	\emph{a}, \emph{en}, \emph{de}, etc.
-	\item[Conjunci\'on] Son palabras que un a otras: \emph{y}, \emph{pero}, etc.
-	\item[Pronombre] Son palabras cuyo referente no es fijo sino que se determina
-	en relaci\'on con otras: \emph{yo}, \emph{alg\'un}, \emph{m\'io}, etc.
-	\item[Interjecci\'on] Son palabras que expresan alguna impresi\'on s\'ubita o
-	sentimiento profundo: \emph{Ay!}, \emph{Eh!}, etc.
+	\item{Sustantivo} Cualquier abstracci\'on o entidad concreta, una 
+	persona (\emph{Maria}), lugar (\emph{La Paz}) o idea (\emph{felicidad}).
+	\item[Verbo] Cualquier acci\'on (\emph{caminar}) u ocurrencia (\emph{sucedi\'o}).
+	\item[Adjetivo] Cualquier calificador del sustantivo (\emph{grande}).
+	\item[Adverbio] Cualquier calificador de un adjetivo, verbo u otro
+	adverbio (\emph{muy}).
+	\item[Determinante] Cualquiera que precise un sustantivo (\emph{el}).
+	\item[Preposici\'on] Cualquiera que establezca una relaci'on y contexto sint\'actico
+	(\emph{en}).
+	\item[Conjunci\'on] Cualquier conector sint\'actico (\emph{y}).
+	\item[Pronombre] Cualquier sustituto de un sustantivo (\emph{alg\'un}).
+	\item[Interjecci\'on] Cualquier expresi\'on emocional (\emph{Ahy!}).
 \end{description}
+
 
 \section{Procesamiento del Lenguaje Natural}
 El Procesamiento del Lenguaje Natural (PLN) es un campo de la inform\'atica y la 
@@ -74,7 +70,76 @@ La interacci\'on se produce con la \emph{generaci\'on} de lenguaje legible por h
 a partir de datos procesados y la \emph{comprensi\'on} del lenguaje humano para su
 representaci\'on formal.
 
-\section{Palabras clave}
+
+\section{Etiquetado gramatical}
+Es la acci\'on de asignar a cada palabra una \emph{etiqueta} que describe como es
+utilizada esta palabra en un texto dado. Tipicamente estas etiquetas indican una
+sintactica, y ocasionalmente incluyen informaci\'on caracter\'istica adicional, tal
+como ser g\'enero (masculino o femenio) o la conjugaci\'on verbal \cite{TH99}. \\
+
+Su principal dificultad radica en la ambig\"uedad inherente
+que tienen las palabras, por ejemplo la palabra \emph{llama} puede hacer referencia a 
+un animal, en este caso es un sustantivo pero tambi\'en puede hacer referencia al 
+acto de realizar una llamada telef\'onica, en este otro caso es un
+verbo, para hacer frente a esta dificultad los algoritmos de etiquetado gramatical 
+deben tomar en cuenta el contexto de las palabras, generalmente haciendo uso de un 
+\emph{Corpus Ling\"uistico}). \\
+
+Existen varios m\'etodos para el etiquedo gramatical: basado en \emph{Modelo Oculto
+de Markov}, basados en sistemas expertos, basados en modelos de lenguaje como
+\emph{Modelo de M\'axima Entropia} o \emph{Modelo N-gram}. \\
+
+En el presente trabajo se utilizar el m\'etodo basado en el Modelo Oculto de Markov.
+
+\subsection{Modelo Oculto de Markov}
+Un Modelo Oculto de Markov (MOM) es una construcci\'on estad\'istica que puede ser
+utilizada para resolver problemas de clasificaci\'on que tengan una representaci\'on
+por secuencia de estados. Estos estados estan conectados por un conjunto
+de \emph{probabilidades de transici\'on}, los cuales indican la probabilidad de pasar
+entre dos estados dados. Un proceso inicia en alg\'un estado, entonces en intervalos
+discretos de tiempo, el proceso se mueve a un nuevo estado seg\'un lo indicado 
+por las probabilidades de transici\'on. En un MOM, la secuencia exacta de estados
+que el proceso genera son desconocidos (ocultos). Cuando el proceso entra en cada
+estado, se elige un \emph{s\'imbolo de salida} con una distribuci\'on de probabilidad
+espec\'ifica para cada uno, La salida de MOM es una secuencia de simbolos de 
+salida \cite{TH99}. \\
+
+Seg\'un Rabiner \cite{TH99} se necesitan 5 elementos para definir un MOM:
+\begin{enumerate}
+	\item \emph{N}, el n\'umero de estados distintos en el modelo. Para el etiquetado
+	gramatical, \emph{N} es el n\'umero de etiquetas gramaticales que son utilizadas 
+	por el sistema. Cada etiqueta corresponde a un estado del MOM.
+	\item \emph{M}, el n\'umero de distintos s\'imbolos de salida en el alfabeto del
+	MOM. Para el etiquetado gramatical, \emph{M} es el n\'umero de palabras del
+	l\'exico utilizado por el sistema.
+	\item $A = \{a_{ij}\}$, la probabilidad de transici\'on de pasar del estado $i$ al 
+	estado $j$.  Para el etiquetado gramatical,  $a_{ij}$ representa  la probabilidad de 
+	pasar de la etiqueta $t_i$ a la etiqueta $t_j$, en otras palabras es la probabilidad
+	que la etiqueta $t_j$ se encuentre despu\'es de la etiqueta $t_i$, por ejemplo
+	la probabilidad que un verbo este despu\'es de un determinante; la estimaci\'on
+	de esta probabilidad se obtiene a partir del corpus utilizado.
+	\item $B=\{b_j(k)\}$, la distribuci\'on de probabilidad de los simbolos bajo
+	observaci\'on, $b_j(k)$ es la probabilidad que el k-\'esimo simbolo de salidad sea 
+	elegido cuando el modelo se encuentra en el estado $j$. Para el etiquetado 
+	gramatical, es la probabilidad que la palabra $w_k$ sea elegida cuando el sistema se 
+	encuentre en la etiqueta $t_j$ ($P(w_k|t_j)$); la estimaci\'on de esta probabilidad
+	se obtiene a partir del corpus utilizado.
+	\item $\pi = \{\pi_i\}$, la distribuci\'on inicial de estados, $\pi_i$ es la
+	probabilidad que el modelo inicie en el estado $i$. Para el etiquetado gramatical,
+	es la probabilidad que el texto inicie con la etiqueda $t_i$.
+\end{enumerate}
+
+Cuando se utiliza el MOM para el etiquetado gramatical, el objetivo es determinar
+la secuencia mas probable de etiqueta (estados) que generan la palabras en el texto
+(secuencia de simbolos de salida). En otras palabras, dado un texto $V$, calcular
+la secuencia $U$ de etiquetas que maximize $P(V|U)$.\\
+
+El algoritmo \emph{Viterbi} es un m\'etodo usual para calcular la secuencia m\'as
+probable de etiquetas cuando se utiliza un MOM.
+
+
+
+\section{Selecci\'on de palabras clave}
 Las palabras clave se definen como una secuencia de una o mas palabras que idealmente
 proveen una representaci\'on compacta de la esencia del contenido de un 
 documento \cite{REC10}. \\
